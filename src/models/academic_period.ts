@@ -72,7 +72,9 @@ export class AcademicPeriod {
       0
     );
 
-    return notes_factor !== 0 ? notes_factor / taken_courses : 0.0;
+    const grade = taken_courses !== 0 ? notes_factor / taken_courses : 0.0;
+
+    return +grade.toFixed(4);
   }
 }
 

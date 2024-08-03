@@ -32,7 +32,9 @@ export class AcademicSummary {
       }
     }
 
-    return credits_enrolled !== 0 ? factor_notes / credits_enrolled : 0.0;
+    const grade = credits_enrolled !== 0 ? factor_notes / credits_enrolled : 0.0;
+
+    return +grade.toFixed(4);
   }
 }
 
