@@ -14,7 +14,7 @@ export class AcademicPeriod {
   }
 
   get_full_courses(): Course[] {
-    return this.courses.filter(course => !course.removed || !course.has_effect);
+    return this.courses.filter(course => !course.removed && course.has_effect);
   }
 
   get_valid_courses(): Course[] {
@@ -31,7 +31,7 @@ export class AcademicPeriod {
     const courses = this.get_valid_courses();
 
     return courses.reduce((total, course) => {
-      if (course.grade !== "R") {
+      if (course.grade !== "R" && course.grade >= 3) {
         return total + course.credits;
       }
 
