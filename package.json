@@ -1,6 +1,6 @@
 {
   "name": "@arturyepez10/indice-usb-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Calculator for Academic GPA based on USB rules",
   "type": "module",
   "main": "dist/index.js",

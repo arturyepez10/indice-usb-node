@@ -3,6 +3,10 @@
 #### Autor
 - Arturo Yepez
 
+#### Language
+
+All of the documentation is initially set to be written in *Spanish*, but all code will be written using English best practices.
+
 ## Descripción
 
 El actual paquete tiene como objetivo el ser una herramienta con la que poder hacer cálculo del **Indice Academico** para los estudiantes de la Universidad Simón Bolívar en Caracas, Venezuela.
