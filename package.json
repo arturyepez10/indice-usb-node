@@ -1,6 +1,6 @@
 {
   "name": "@arturyepez10/indice-usb-node",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Calculator for Academic GPA based on USB rules",
   "type": "module",
   "main": "dist/index.js",
@@ -21,10 +21,20 @@
     "ts-jest": "^29.2.4",
     "typescript": "^5.5.4"
   },
-  "files": ["dist", "LICENSE", "Readme.md", "package.json"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "Readme.md",
+    "package.json"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/arturyepez10/indice-usb-node"
   },
-  "keywords": ["usb", "indice", "gpa", "calculator"]
+  "keywords": [
+    "usb",
+    "indice",
+    "gpa",
+    "calculator"
+  ]
 }
