@@ -28,7 +28,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/arturyepez10/indice-usb-node"
+    "url": "git+https://github.com/arturyepez10/indice-usb-node.git"
   },
   "keywords": [
     "usb",
