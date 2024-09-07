@@ -1,4 +1,4 @@
-import { Course } from "../src/models";
+import { Course } from "../src/models/index";
 
 export const regular_courses_mocks: [string, number, Course[]][] = [
   [

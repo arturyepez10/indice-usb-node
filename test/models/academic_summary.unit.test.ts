@@ -1,4 +1,4 @@
-import { Course, AcademicPeriod, AcademicSummary } from '../../src/models';
+import { AcademicPeriod, AcademicSummary } from '../../src/models/index';
 import {
   regular_courses_mocks as mocks
 } from '../mocks';
