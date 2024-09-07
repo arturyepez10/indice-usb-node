@@ -13,44 +13,6 @@ export class AcademicPeriod {
     this.courses.push(course);
   }
 
-  get_full_courses(): Course[] {
-    return this.courses.filter(course => !course.removed && course.has_effect);
-  }
-
-  get_valid_courses(): Course[] {
-    return this.courses.filter(course => !course.removed);
-  }
-
-  get total_credits(): number {
-    const courses = this.get_valid_courses();
-
-    return courses.reduce((total, course) => total + course.credits, 0);
-  }
-
-  get total_credits_passed(): number {
-    const courses = this.get_valid_courses();
-
-    return courses.reduce((total, course) => {
-      if (course.grade !== "R" && course.grade >= 3) {
-        return total + course.credits;
-      }
-
-      return total;
-    }, 0);
-  }
-
-  get_total_credits_by_grade(grade: number): number {
-    const courses = this.get_valid_courses();
-
-    return courses.reduce((total, course) => {
-      if (course.grade === grade) {
-        return total + course.credits;
-      }
-
-      return total;
-    }, 0);
-  }
-
   get period_grade(): number {
     const courses = this.get_valid_courses();
 
@@ -75,6 +37,72 @@ export class AcademicPeriod {
     const grade = taken_courses !== 0 ? notes_factor / taken_courses : 0.0;
 
     return +grade.toFixed(4);
+  }
+
+  get_full_courses(): Course[] {
+    return this.courses.filter(course => !course.removed && course.has_effect);
+  }
+
+  get_valid_courses(): Course[] {
+    return this.courses.filter(course => !course.removed);
+  }
+
+  /* --------------------------- */
+  /* Statistics function helpers */
+  /* --------------------------- */
+
+  get total_credits(): number {
+    const courses = this.get_valid_courses();
+
+    return courses.reduce((total, course) => total + course.credits, 0);
+  }
+
+  get total_courses_passed(): number {
+    const courses = this.get_valid_courses();
+
+    return courses.reduce((total, course) => {
+      if (course.grade !== "R" && course.grade >= 3) {
+        return total + 1;
+      }
+
+      return total;
+    }, 0);
+  }
+
+  total_courses_by_grade(grade: number | "R" ): number {
+    const courses = this.get_valid_courses();
+
+    return courses.reduce((total, course) => {
+      if (course.grade === grade) {
+        return total + 1;
+      }
+
+      return total;
+    }, 0);
+  }
+
+  get total_credits_passed(): number {
+    const courses = this.get_valid_courses();
+
+    return courses.reduce((total, course) => {
+      if (course.grade !== "R" && course.grade >= 3) {
+        return total + course.credits;
+      }
+
+      return total;
+    }, 0);
+  }
+
+  get_total_credits_by_grade(grade: number | "R" ): number {
+    const courses = this.get_valid_courses();
+
+    return courses.reduce((total, course) => {
+      if (course.grade === grade) {
+        return total + course.credits;
+      }
+
+      return total;
+    }, 0);
   }
 }
 
