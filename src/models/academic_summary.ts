@@ -12,7 +12,7 @@ export class AcademicSummary {
     let factor_notes = 0.0;
 
     for (let period of this.academic_periods) {
-      const courses = period.get_valid_courses();
+      const courses = period.get_full_courses();
 
       for (let course of courses) {
         if (course.grade === "R") {
